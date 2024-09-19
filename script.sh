@@ -1,17 +1,17 @@
 #!/bin/bash
 
-AWS_REGION="us-east-1"
-VPC_CIDR_BLOCK="10.0.0.0/16"
-PRIVATE_SUBNET_CIDR_BLOCK="10.0.1.0/24"
-PUBLIC_SUBNET_CIDR_BLOCK="10.0.2.0/24"
+read -p "Enter AWS region (e.g., us-east-1): " AWS_REGION
+read -p "Enter VPC CIDR block (e.g., 10.0.0.0/16): " VPC_CIDR_BLOCK
+read -p "Enter private subnet CIDR block (e.g., 10.0.1.0/24): " PRIVATE_SUBNET_CIDR_BLOCK
+read -p "Enter public subnet CIDR block (e.g., 10.0.2.0/24): " PUBLIC_SUBNET_CIDR_BLOCK
+read -p "Enter key name (e.g., Avag-Test-Vps): " KEY_NAME
+read -p "Enter private subnet name: " PRIVATE_SUBNET_NAME_TAG
+read -p "Enter public subnet name: " PUBLIC_SUBNET_NAME_TAG
+read -p "Enter instance tag key: " INSTANCE_TAG_KEY
+read -p "Enter instance tag value: " INSTANCE_TAG_VALUE
+read -p "Enter VPC tag name: " VPC_NAME_TAG
 AMI_ID="ami-0a0e5d9c7acc336f1"
 INSTANCE_TYPE="t2.micro"
-KEY_NAME="nshan"
-PRIVATE_SUBNET_NAME_TAG="Private-subnet"
-PUBLIC_SUBNET_NAME_TAG="Public-subnet"
-INSTANCE_TAG_KEY="Nshan"
-INSTANCE_TAG_VALUE="HomeWork"
-VPC_NAME_TAG="Nshan_Homework"
 
 sudo apt update
 sudo apt upgrade -y
